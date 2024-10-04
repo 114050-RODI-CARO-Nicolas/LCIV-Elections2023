@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  elections-wrapper-api:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8079"
+    networks:
+      elections-network:
+    depends_on:
+      - elections-api
+  elections-api:
+    image: tupfrcutn/elecciones-2023:1.0.0
+    restart: always
+    networks:
+      elections-network:
+
+networks:
+  elections-network:
