@@ -12,7 +12,9 @@ import java.util.Objects;
 public class RestClient {
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String url = "http://elections-api:8080/";
+
+   // private final String url = "http://elections-api:8080/";
+    private final String url = "http://localhost:8080/";
 
     public List<DistrictDTO> getDistricts(String name, Integer id){
         String endpointUrl;
